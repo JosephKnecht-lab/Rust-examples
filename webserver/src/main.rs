@@ -12,7 +12,9 @@ fn main() {
         let stream = stream.unwrap();
 
         println!("Connection has been established!");
-        handle_connection(stream);
+        thread::spawn(|| {
+            handle_connection(stream);
+        })
     }
 }
 
