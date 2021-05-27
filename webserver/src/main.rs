@@ -17,8 +17,11 @@ fn main() {
 fn handle_connection(mut stream:TcpStream){
     let mut buffer = [0; 512];
 
-    stream.read(&mut buffer).unwrap();
+    stream.read(&mut buffer).unwrap();  
 
+    let get = b"GET / HTTP/1.1\r\n";  //b is for byte string
+
+    if buffer.starts_with(get){
     let mut file = File::open("index.html").unwrap();
 
     let mut contents = String::new();
@@ -29,4 +32,7 @@ fn handle_connection(mut stream:TcpStream){
 
     stream.write(response.as_bytes()).unwrap();
     stream.flush().unwrap();
+    } else {
+        //error
+    }
 }
