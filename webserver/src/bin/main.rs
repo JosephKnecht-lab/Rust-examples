@@ -1,3 +1,7 @@
+extern crate webserver;
+use webserver::ThreadPool;
+
+
 use std::io::prelude::*;
 use std::net::TcpStream;
 use std::net::TcpListener;
@@ -5,16 +9,17 @@ use std::fs::File;
 use std::thread;
 use std::time::Duration;
 
+
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();  //Returns Result<T, E>
+    //let pool = ThreadPool::new(4);
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
 
-        println!("Connection has been established!");
-        thread::spawn(|| {
+        ThreadPool::new(4).execute(|| {
             handle_connection(stream);
-        })
+        });
     }
 }
 
