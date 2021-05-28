@@ -2,8 +2,12 @@ pub struct ThreadPool;
 
 // ANCHOR: here
 impl ThreadPool {
-    // --snip--
-    // ANCHOR_END: here
+/// Create a new ThreadPool. 
+///
+/// The size is the number of threads in the pool. 
+/// # Panics 
+/// 
+/// The `new` function will panic if the size is zero.
     pub fn new(size: usize) -> ThreadPool {
         assert!(size > 0);
         ThreadPool
