@@ -39,3 +39,4 @@ To open documentation use cargo doc --open
 cargo install <name of package>
 ```
 All binaries installed with cargo install are stored in the installation root’s bin folder at $HOME/.cargo/bin.
+If the project has no binaries, it has to be added as dependany at Cargo.toml
