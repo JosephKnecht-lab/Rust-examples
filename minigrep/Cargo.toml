@@ -2,7 +2,9 @@
 name = "minigrep"
 version = "0.1.0"
 authors = ["JosephKnecht <authorJosephKnecht@gmail.com>"]
-edition = "2018"
+edition = "2021"
+description = "Search for a local file contents."
+license= "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
