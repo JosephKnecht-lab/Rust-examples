@@ -27,3 +27,9 @@ cargo run <project name>
 ```
 cargo test
 ```
+
++ Create  documentation: 
+```
+cargo doc
+```
+To open documentation use cargo doc --open
