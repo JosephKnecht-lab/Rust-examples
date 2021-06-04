@@ -33,3 +33,9 @@ cargo test
 cargo doc
 ```
 To open documentation use cargo doc --open
+
++ Install Cargo.io packages: 
+```
+cargo install <name of package>
+```
+All binaries installed with cargo install are stored in the installation root’s bin folder at $HOME/.cargo/bin.
