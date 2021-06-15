@@ -11,11 +11,26 @@ fn main() {
         println!("number is not divisible by 4, 3, or 2");
     }
 
-    loop_test();
+    //loop_test();
+    return_from_loop();
 }
 
 fn loop_test(){
     loop {
         println!("again!");
     }
+}
+
+fn return_from_loop(){
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {}", result);
 }
