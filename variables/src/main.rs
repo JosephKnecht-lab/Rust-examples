@@ -11,6 +11,7 @@ fn main() {
 
     shadowing();
     spaces();
+    chars();
 }
 
 fn shadowing(){
@@ -28,5 +29,14 @@ fn spaces(){
     let spaces = spaces.len();
 
     println!("The value of spaces is: {}", spaces); 
+
+}
+
+fn chars (){
+    let c = 'z';
+    let z = 'ℤ';
+    let heart_eyed_cat = '😻';
+
+    println!("The value of heart_eyed_cat is: {}", heart_eyed_cat); 
 
 }
