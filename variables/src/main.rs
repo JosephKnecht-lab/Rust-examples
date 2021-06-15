@@ -10,6 +10,7 @@ fn main() {
     println!("The value of x is: {}", x);
 
     shadowing();
+    spaces();
 }
 
 fn shadowing(){
@@ -20,4 +21,12 @@ fn shadowing(){
     let x = x * 2;
 
     println!("The value of x is: {}", x); 
+}
+
+fn spaces(){
+    let spaces = "   ";
+    let spaces = spaces.len();
+
+    println!("The value of spaces is: {}", spaces); 
+
 }
