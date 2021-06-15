@@ -13,6 +13,7 @@ fn main() {
     spaces();
     chars();
     tupple();
+    expression();
 }
 
 fn shadowing(){
@@ -46,6 +47,17 @@ fn tupple() {
     let tup = (500, 6.4, 1);
 
     let (x, y, z) = tup;
+
+    println!("The value of y is: {}", y);
+}
+
+fn expression(){
+    let x = 5;
+
+    let y = {
+        let x = 3;
+        x + 1
+    };
 
     println!("The value of y is: {}", y);
 }
