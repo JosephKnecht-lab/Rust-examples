@@ -14,6 +14,11 @@ fn main() {
     chars();
     tupple();
     expression();
+    five();
+
+    let z = plus_one(4);
+
+    println!("the value of z is: {}", z);
 }
 
 fn shadowing(){
@@ -60,4 +65,12 @@ fn expression(){
     };
 
     println!("The value of y is: {}", y);
+}
+
+fn five() -> i32 {
+    5
+}
+
+fn plus_one(x: i32) -> i32 {
+    x + 1 
 }
