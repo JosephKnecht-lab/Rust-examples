@@ -15,6 +15,7 @@ fn main() {
     return_from_loop();
     while_test();
     for_test();
+    reverse();
 }
 
 fn loop_test(){
@@ -55,4 +56,11 @@ fn for_test(){
     for element in a.iter() {
         println!("the value is: {}", element);
     }
+}
+
+fn reverse(){
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("LIFTOFF!!!");
 }
