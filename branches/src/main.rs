@@ -10,4 +10,12 @@ fn main() {
     } else {
         println!("number is not divisible by 4, 3, or 2");
     }
+
+    loop_test();
+}
+
+fn loop_test(){
+    loop {
+        println!("again!");
+    }
 }
