@@ -13,6 +13,7 @@ fn main() {
 
     //loop_test();
     return_from_loop();
+    while_test();
 }
 
 fn loop_test(){
@@ -33,4 +34,16 @@ fn return_from_loop(){
     };
 
     println!("The result is {}", result);
+}
+
+fn while_test() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{}!", number);
+
+        number -= 1;
+    }
+
+    println!("LIFTOFF!!!");
 }
