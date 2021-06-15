@@ -12,6 +12,7 @@ fn main() {
     shadowing();
     spaces();
     chars();
+    tupple();
 }
 
 fn shadowing(){
@@ -39,4 +40,12 @@ fn chars (){
 
     println!("The value of heart_eyed_cat is: {}", heart_eyed_cat); 
 
+}
+
+fn tupple() {
+    let tup = (500, 6.4, 1);
+
+    let (x, y, z) = tup;
+
+    println!("The value of y is: {}", y);
 }
