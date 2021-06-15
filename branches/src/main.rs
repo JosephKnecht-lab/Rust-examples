@@ -14,6 +14,7 @@ fn main() {
     //loop_test();
     return_from_loop();
     while_test();
+    for_test();
 }
 
 fn loop_test(){
@@ -46,4 +47,12 @@ fn while_test() {
     }
 
     println!("LIFTOFF!!!");
+}
+
+fn for_test(){
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a.iter() {
+        println!("the value is: {}", element);
+    }
 }
