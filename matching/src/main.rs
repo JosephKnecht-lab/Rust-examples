@@ -18,5 +18,7 @@ fn value_in_cents(coin: Coin) -> u8 {
 }
 
 fn main() {
-
+    let myCoin = Coin::Dime;
+    let value: u8 = value_in_cents(myCoin);
+    println!("Value is : {}", value);
 }
