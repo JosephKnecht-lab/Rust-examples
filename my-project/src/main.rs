@@ -1,7 +1,7 @@
 
 // use std::io::Result as IoResult;
 use std::fmt::Result;
-use std::collections::HashMap;
+use std::collections::*;
 use std::io::{self, Write};
 
 // use std::{cmp::Ordering, io};
