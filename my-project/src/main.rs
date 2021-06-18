@@ -1,9 +1,11 @@
 
-use std::io::Result as IoResult;
+// use std::io::Result as IoResult;
 use std::fmt::Result;
 use std::collections::HashMap;
+use std::io::{self, Write};
 
-use std::{cmp::Ordering, io};
+// use std::{cmp::Ordering, io};
+
 
 use rand::Rng;
 
