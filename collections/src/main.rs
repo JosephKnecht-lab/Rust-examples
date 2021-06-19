@@ -12,6 +12,7 @@ fn main() {
     reading_vector();
     push_into_vector();
     itterate();
+    itterate_add();
 
 }
 
@@ -48,6 +49,14 @@ fn push_into_vector(){
 fn itterate(){
     let v = vec![100, 32, 57];
     for i in &v {
+        println!("{}", i);
+    }
+}
+
+fn itterate_add(){
+    let mut v = vec![11,22,33];
+    for i in &mut v {
+        *i += 50;
         println!("{}", i);
     }
 }
