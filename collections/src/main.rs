@@ -144,4 +144,14 @@ fn append_strings(){
 
     println!("s is {}", s);
 
+    //Return chars
+    for c in "नमस्ते".chars() {
+        println!("{}", c);
+    }
+
+    //Return bytes
+    for b in "नमस्ते".bytes() {
+        println!("{}", b);
+    }
+
 }
