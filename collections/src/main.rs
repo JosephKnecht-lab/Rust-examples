@@ -20,6 +20,9 @@ fn reading_vector() {
     println!("The third element is {}", third);
     println!("The third element is {}", &v[2]);
 
+    let does_not_exist = &v[100];
+    let does_not_exist = v.get(100);
+
 
 
     match v.get(2) {
