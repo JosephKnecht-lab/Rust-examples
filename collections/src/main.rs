@@ -1,3 +1,12 @@
+#[derive(Debug)]
+
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
+
+
 fn main() {
 
     let mut v = Vec::new();
@@ -8,6 +17,14 @@ fn main() {
     v.push(8);
 
     println!("Vector v is {:?}",v);
+
+    let row = vec![
+    SpreadsheetCell::Int(3),
+    SpreadsheetCell::Text(String::from("blue")),
+    SpreadsheetCell::Float(10.12),
+    ];  
+
+    println!("Row of Enums: {:?}", row);
 
     reading_vector();
     push_into_vector();
