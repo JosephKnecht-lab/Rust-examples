@@ -10,6 +10,7 @@ fn main() {
     println!("Vector v is {:?}",v);
 
     reading_vector();
+    push_into_vector();
 
 }
 
@@ -29,4 +30,16 @@ fn reading_vector() {
         Some(third) => println!("The third element is {}", third),
         None => println!("There is no third element."),
     }
+}
+
+fn push_into_vector(){
+    let mut v = vec![1, 2, 3, 4, 5];
+
+    //let first = &v[0];
+    let first = v[0]; //this fixes the reference borrow. Now it compiles
+
+
+    v.push(6);  //error because it borrows the reference &v at first as immutable
+
+    println!("The first element is: {}", first);
 }
