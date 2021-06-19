@@ -107,5 +107,14 @@ fn intro_strings(){
 
     println!("String hello:{}",hello);
 
+    append_strings();
+}
+
+fn append_strings(){
+    let mut s = String::from("foo");
+    s.push_str("bar");
+
+    println!("Appended string :{}",s);
+
 
 }
