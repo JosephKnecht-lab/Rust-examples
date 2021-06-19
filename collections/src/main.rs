@@ -11,6 +11,7 @@ fn main() {
 
     reading_vector();
     push_into_vector();
+    itterate();
 
 }
 
@@ -42,4 +43,11 @@ fn push_into_vector(){
     v.push(6);  //error because it borrows the reference &v at first as immutable
 
     println!("The first element is: {}", first);
+}
+
+fn itterate(){
+    let v = vec![100, 32, 57];
+    for i in &v {
+        println!("{}", i);
+    }
 }
