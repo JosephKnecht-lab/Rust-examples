@@ -121,5 +121,8 @@ fn append_strings(){
     s1.push_str(s2);
     println!("s2 is {}", s2);
 
+    let mut s = String::from("lo");
+    s.push('l');
+
 
 }
