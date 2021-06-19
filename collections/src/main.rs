@@ -126,7 +126,7 @@ fn append_strings(){
 
     let s1 = String::from("Hello, ");
     let s2 = String::from("world!");
-    let s3 = s1 + &s2;
+    let s3 = s1 + &s2; //s1 no longer exists after addition because its moved into s3
 
     println!("s3 is {}", s3);
 
