@@ -138,5 +138,10 @@ fn append_strings(){
 
     println!("s is {}", s);
 
+    //UTF-8 vaules are not always 1 byte
+    let hello = "Здравствуйте";
+    let s = &hello[0..4];
+
+    println!("s is {}", s);
 
 }
