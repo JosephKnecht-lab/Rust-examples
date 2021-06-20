@@ -17,4 +17,17 @@ fn main() {
             }
         },
     };
+
+    unwrap_test();
+    expect_test();
+}
+
+fn unwrap_test() {
+    let f = File::open("hello.txt").unwrap();
+    println!("f is: {:?}",f);
+}
+
+fn expect_test(){
+    let f = File::open("hello.txt").expect("Failed to open hello.txt");
+    println!("f is: {:?}",f);
 }
