@@ -1,10 +1,29 @@
 
-struct Point<T, U> {
-    x: T,
-    y: U,
+// struct Point<T, U> {
+//     x: T,
+//     y: U,
+// }
+
+enum Option<T> {
+    Some(T),
+    None,
 }
 
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
 
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
 
 
 fn main() {
