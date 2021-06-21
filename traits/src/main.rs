@@ -74,3 +74,16 @@ pub fn notify<T: Summary>(item: &T)  {
 //     where T: Display + Clone,
 //           U: Clone + Debug
 //      {
+
+
+    fn returns_summarizable() -> impl Summary {  //Return trait 
+        Tweet {
+            username: String::from("horse_ebooks"),
+            content: String::from(
+                "of course, as you probably already know, people",
+            ),
+            reply: false,
+            retweet: false,
+        }
+    }
+    
