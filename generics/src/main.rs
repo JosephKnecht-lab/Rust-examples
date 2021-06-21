@@ -1,8 +1,4 @@
-
-// struct Point<T, U> {
-//     x: T,
-//     y: U,
-// }
+use std::fmt::Display;
 
 enum Option<T> {
     Some(T),
@@ -25,8 +21,36 @@ impl<T> Point<T> {
     }
 }
 
+struct Pair<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Pair<T> {
+    fn new(x: T, y: T) -> Self {
+        Self { x, y }
+    }
+}
+
+impl<T: Display + PartialOrd> Pair<T> {
+    fn cmp_display(&self) {
+        if self.x >= self.y {
+            println!("The largest member is x === {}", self.x);
+        } else {
+            println!("The largest member is y === {}", self.y);
+        }
+    }
+}
+
 
 fn main() {
+    let pair: Pair<u32> = Pair {
+        x: 2,
+        y: 3 
+    };
+
+    pair.cmp_display();
+
     let number_list = vec![34, 50, 25, 100, 65];
 
     let result = largest(&number_list);
