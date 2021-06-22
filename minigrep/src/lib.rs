@@ -35,6 +35,16 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>>{
     Ok(())
 }
 
+/// Search for a string in content.
+///
+/// # Examples
+///
+/// ```
+/// 
+/// minigrep::search("test", "this is a test");
+///
+/// ```
+
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
         .lines()
