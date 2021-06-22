@@ -37,6 +37,7 @@ fn main() {
     let simulated_random_number = 7;
 
     generate_workout(simulated_user_specified_value, simulated_random_number);
+    closures_scope();
 }
 
 
@@ -57,4 +58,14 @@ fn generate_workout(intensity: u32, random_number: u32) {
             println!("Today, run for {} minutes!", expensive_closure.value(intensity));
         }
     }
+}
+
+fn closures_scope() {
+    let x = 4;
+
+    let equal_to_x = |z| z == x;
+
+    let y = 4;
+
+    assert!(equal_to_x(y));
 }
