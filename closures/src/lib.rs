@@ -107,4 +107,19 @@ mod tests {
         assert_eq!(counter.next(), Some(5));
         assert_eq!(counter.next(), None);
     }
+
+    #[test]
+    fn using_other_iterator_trait_methods() {
+        let sum: u32 = Counter::new()           //Create new counter
+            .zip(Counter::new().skip(1))        //zips pair into single insance
+            .map(|(a, b)| a * b)                // multiplies pairs
+            .filter(|x| x % 3 == 0)             //filter only the pairs divisable by 3
+            .sum();                             //return sum
+        assert_eq!(18, sum);
+    }
 }
+
+// (1,2) 2
+// (2,3) 6  < return
+// (3,4) 12 < return 12 + 6
+// (4,5) 20
