@@ -38,6 +38,7 @@ fn main() {
 
     generate_workout(simulated_user_specified_value, simulated_random_number);
     closures_scope();
+    itterators();
 }
 
 
@@ -68,4 +69,14 @@ fn closures_scope() {
     let y = 4;
 
     assert!(equal_to_x(y));
+}
+
+fn itterators(){
+    let v1 = vec![1, 2, 3];
+
+    let v1_iter = v1.iter();
+
+    for val in v1_iter {
+        println!("Got: {}", val);
+    }
 }
