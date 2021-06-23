@@ -14,6 +14,12 @@ impl Screen {
     }
 }
 
+
+//trait Object clone
+pub trait Clone {
+    fn clone(&self) -> Self;
+}
+
 pub struct Button {
     pub width: u32,
     pub height: u32,
