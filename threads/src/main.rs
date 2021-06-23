@@ -38,7 +38,7 @@ fn message_passing(){
     thread::spawn(move || {
         let val = String::from("hello");
         tx.send(val).unwrap();
-        println!("val is {}", val);  //Error: once val is send over channel, the channel becomes the owner or val.
+        // println!("val is {}", val);  //Error: once val is send over channel, the channel becomes the owner or val.
     });
 
     let recived = rx.recv().unwrap();
