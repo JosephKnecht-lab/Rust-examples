@@ -1,5 +1,7 @@
 use std::thread;
 use std::time::Duration;
+use std::sync::mpsc;
+
 
 fn main() {
     let handle = thread::spawn(|| {
@@ -25,5 +27,17 @@ fn main() {
     // drop(v); value v can't be dropped because it was moved inside the closure
 
     handle.join().unwrap();
+
+    message_passing();
+
+}
+
+fn message_passing(){
+    let (tx, rx) = mpsc::channel();  //mpsc - multiple producer single consumer
+
+    thread::spawn(move || {
+        let val = String::from("hello");
+        tx.send(val).unwrap();
+    });
 
 }
