@@ -36,12 +36,21 @@ fn message_passing(){
     let (tx, rx) = mpsc::channel();  //mpsc - multiple producer single consumer
 
     thread::spawn(move || {
-        let val = String::from("hello");
-        tx.send(val).unwrap();
-        // println!("val is {}", val);  //Error: once val is send over channel, the channel becomes the owner or val.
+        let vals = vec![
+            String::from("hi"),
+            String::from("from"),
+            String::from("the"),
+            String::from("thread"),
+        ];
+
+        for val in vals {
+            tx.send(val).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
     });
 
-    let recived = rx.recv().unwrap();
-    println!("Received message is {}", recived);
+    for received in rx {
+        println!("Got: {}", received);
+    }
 
 }
