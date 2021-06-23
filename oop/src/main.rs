@@ -2,14 +2,11 @@ pub trait Draw {
     fn draw(&self);
 }
 
-pub struct Screen<T: Draw> {
-    pub components: Vec<T>,
+pub struct Screen {
+    pub components: Vec<Box<dyn Draw>>,
 }
 
-impl<T> Screen<T>
-where
-    T: Draw,
-{
+impl Screen {
     pub fn run(&self) {
         for component in self.components.iter() {
             component.draw();
@@ -81,7 +78,26 @@ impl AveragedCollection {
 
 
 fn main() {
-    println!("Hello, world!");
+    let screen = Screen {
+        components: vec![
+            Box::new(SelectBox {
+                width: 75,
+                height: 10,
+                options: vec![
+                    String::from("Yes"),
+                    String::from("Maybe"),
+                    String::from("No"),
+                ],
+            }),
+            Box::new(Button {
+                width: 50,
+                height: 10,
+                label: String::from("OK"),
+            }),
+        ],
+    };
+
+    screen.run();
 }
 
 
