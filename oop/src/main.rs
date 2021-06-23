@@ -1,3 +1,24 @@
+pub trait Draw {
+    fn draw(&self);
+}
+
+pub struct Screen<T: Draw> {
+    pub components: Vec<T>,
+}
+
+impl<T> Screen<T>
+where
+    T: Draw,
+{
+    pub fn run(&self) {
+        for component in self.components.iter() {
+            component.draw();
+        }
+    }
+}
+
+
+
 pub struct AveragedCollection {
     list: Vec<i32>,
     average: f64,
@@ -25,6 +46,9 @@ impl AveragedCollection {
         self.average
     }
 
+    
+    //Encapsulation 
+    // only internal call can change the struct Average Calculation
     fn update_average(&mut self) {
         let total: i32 = self.list.iter().sum();
         self.average = total as f64 / self.list.len() as f64;
