@@ -16,4 +16,8 @@ impl Post {
             state: Some(Box::new(Draft {}))
         }
     }
+
+    pub fn add_text(&mut self, text: &str) {
+        self.content.push_str(text);
+    }
 }
