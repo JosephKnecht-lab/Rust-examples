@@ -35,12 +35,27 @@ fn main() {
 fn message_passing(){
     let (tx, rx) = mpsc::channel();  //mpsc - multiple producer single consumer
 
+    let tx1 = tx.clone();
     thread::spawn(move || {
         let vals = vec![
             String::from("hi"),
             String::from("from"),
             String::from("the"),
             String::from("thread"),
+        ];
+
+        for val in vals {
+            tx1.send(val).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
+    });
+
+    thread::spawn(move || {
+        let vals = vec![
+            String::from("more"),
+            String::from("messages"),
+            String::from("for"),
+            String::from("me"),
         ];
 
         for val in vals {
