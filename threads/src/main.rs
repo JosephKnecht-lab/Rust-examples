@@ -40,4 +40,7 @@ fn message_passing(){
         tx.send(val).unwrap();
     });
 
+    let recived = rx.recv().unwrap();
+    println!("Received message is {}", recived);
+
 }
