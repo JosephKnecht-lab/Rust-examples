@@ -22,6 +22,8 @@ fn main() {
         println!("Here's a vector: {:?}", v);
     });
 
+    // drop(v); value v can't be dropped because it was moved inside the closure
+
     handle.join().unwrap();
 
 }
