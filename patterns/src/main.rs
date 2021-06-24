@@ -53,6 +53,18 @@ fn main() {
         _ => println!("anything"),
     }
 
+    //Scope of varibables 
+    let x = Some(5);
+    let y = 10;
+
+    match x {
+        Some(50) => println!("Got 50"),
+        Some(y) => println!("Matched, y = {:?}", y),   //y matches any value inside Some(Y), ruturnes matched y = 5
+        _ => println!("Default case, x = {:?}", x),
+    }
+
+    println!("at the end: x = {:?}, y = {:?}", x, y);
+
 }
 
 fn print_coordinates(&(x, y): &(i32, i32)) {
