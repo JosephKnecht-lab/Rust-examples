@@ -117,4 +117,13 @@ fn destructure_struct(){
     assert_eq!(0, x);
     assert_eq!(7, y);
 
+    let p = Point { x: 0, y: 7 };
+
+    //pattern matching on structs
+    match p {
+        Point { x, y: 0 } => println!("On the x axis at {}", x),
+        Point { x: 0, y } => println!("On the y axis at {}", y),
+        Point { x, y } => println!("On neither axis: ({}, {})", x, y),
+    }
+
 }
