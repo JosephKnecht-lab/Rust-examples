@@ -13,6 +13,17 @@ struct Point {
     y: i32,
 }
 
+struct Millimeters(u32);
+struct Meters(u32);
+
+impl Add<Meters> for Millimeters {
+    type Output = Millimeters;
+
+    fn add(self, other: Meters) -> Millimeters {
+        Millimeters(self.0 + (other.0 * 1000))
+    }
+}
+
 impl Add for Point {
     type Output = Point;  //associative type returned
 
