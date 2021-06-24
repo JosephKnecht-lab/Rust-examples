@@ -256,4 +256,12 @@ fn ignore_with_dots(){
     match origin {
         Point3D { x, y,..} => println!("x is {}, y is {}", x,y),
     }
+
+    let numbers = (2, 4, 8, 16, 32);
+
+    match numbers {
+        (first, .., last) => {
+            println!("Some numbers: {}, {}", first, last);
+        }
+    }
 }
