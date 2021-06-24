@@ -7,5 +7,18 @@ fn main() {
 
     println!("x + y = {}", x + y);
 
+    type Thunk = Box<dyn Fn() + Send + 'static>;  //merge types into a single type Thunk
+
+    let f: Thunk = Box::new(|| println!("hi"));
+
+    fn takes_long_type(f: Thunk) {
+        // --snip--
+    }
+
+    fn returns_long_type() -> Thunk {
+        // --snip--
+    
+    }
+
 
 }
