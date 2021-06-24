@@ -121,6 +121,7 @@ fn main() {
     destructure_enum();
     nested_enum_matching();
     complex_tupple();
+    foo(2,3);
 
 }
 
@@ -196,4 +197,8 @@ fn complex_tupple(){
     println!("Destructured values of tupple are {} {} {} {}", feet,inches,x,y);
     
     
+}
+
+fn foo(_: i32, y: i32) {
+    println!("This code only uses the y parameter: {}", y,);
 }
