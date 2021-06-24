@@ -50,3 +50,8 @@ fn main() {
 fn bar() -> ! {
     // --snip--
 }
+
+//Sized.. constant size at compile time
+fn generic<T: Sized>(t: T) {
+    // --snip--
+}
