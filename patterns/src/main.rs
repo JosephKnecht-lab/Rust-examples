@@ -3,6 +3,12 @@ struct Point {
     y: i32,
 }
 
+struct Point3D {
+    x: i32,
+    y: i32,
+    z: i32,
+}
+
 enum Message {
     Quit,
     Move { x: i32, y: i32 },
@@ -124,6 +130,7 @@ fn main() {
     foo(2,3);
     ignore_values();
     unused_variables();
+    ignore_with_dots();
 
 }
 
@@ -241,4 +248,12 @@ fn unused_variables(){
     }
 
     println!("{:?}", s);
+}
+
+fn ignore_with_dots(){
+    let origin = Point3D { x: 0, y: 4, z: 0 };
+
+    match origin {
+        Point3D { x, y,..} => println!("x is {}, y is {}", x,y),
+    }
 }
