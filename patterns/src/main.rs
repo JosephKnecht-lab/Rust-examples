@@ -123,6 +123,7 @@ fn main() {
     complex_tupple();
     foo(2,3);
     ignore_values();
+    unused_variables();
 
 }
 
@@ -226,4 +227,9 @@ fn ignore_values(){
             println!("Some numbers: {}, {}, {}", first, third, fifth)
         }
     }
+}
+
+fn unused_variables(){
+    let _x = 5;
+    let y = 10;
 }
