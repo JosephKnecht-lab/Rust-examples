@@ -10,6 +10,18 @@ enum Message {
     ChangeColor(i32, i32, i32),
 }
 
+enum Color {
+    Rgb(i32, i32, i32),
+    Hsv(i32, i32, i32),
+}
+
+enum MessageColor {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(Color),
+}
+
 
 
 fn main() {
@@ -107,6 +119,7 @@ fn main() {
 
     destructure_struct();
     destructure_enum();
+    nested_enum_matching();
 
 }
 
@@ -156,4 +169,21 @@ fn destructure_enum() {
             r, g, b
         ),
     }
+}
+
+fn nested_enum_matching(){
+    let msg = MessageColor::ChangeColor(Color::Hsv(0, 160, 255));
+
+    match msg {
+        MessageColor::ChangeColor(Color::Rgb(r, g, b)) => println!(
+            "Change the color to red {}, green {}, and blue {}",
+            r, g, b
+        ),
+        MessageColor::ChangeColor(Color::Hsv(h, s, v)) => println!(
+            "Change the color to hue {}, saturation {}, and value {}",
+            h, s, v
+        ),
+        _ => (),
+    }
+
 }
