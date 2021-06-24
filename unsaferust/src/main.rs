@@ -5,6 +5,9 @@
 // Implement an unsafe trait
 // Access fields of unions
 
+// Using unsafe to take one of the five actions (superpowers) just discussed isn’t wrong or even frowned upon.
+// But it is trickier to get unsafe code correct because the compiler can’t help uphold memory safety. 
+
 use std::slice;
 
 static HELLO_WORLD: &str = "Hello, world!";
