@@ -45,3 +45,8 @@ fn main() {
 
 
 }
+
+//function that never returns
+fn bar() -> ! {
+    // --snip--
+}
