@@ -5,6 +5,7 @@
 // Implement an unsafe trait
 // Access fields of unions
 
+use std::slice;
 
 fn main() {
     derefence_raw_poointer();
@@ -25,7 +26,10 @@ fn derefence_raw_poointer(){
     }
  
     let address = 0x012345usize;  //point to exact location in memory
-    let r = address as *const i32;
+    let r = address as *mut i32;
+
+    let slice: &[i32] = unsafe { slice::from_raw_parts_mut(r, 10000) };
+
 }
 
 fn unsafe_function(){
