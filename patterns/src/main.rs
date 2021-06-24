@@ -131,6 +131,7 @@ fn main() {
     ignore_values();
     unused_variables();
     ignore_with_dots();
+    match_guard();
 
 }
 
@@ -263,5 +264,15 @@ fn ignore_with_dots(){
         (first, .., last) => {
             println!("Some numbers: {}, {}", first, last);
         }
+    }
+}
+
+fn match_guard(){
+    let num = Some(4);
+
+    match num {
+        Some(x) if x < 5 => println!("less than five: {}", x),
+        Some(x) => println!("{}", x),
+        None => (),
     }
 }
