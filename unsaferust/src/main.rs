@@ -8,6 +8,7 @@
 
 fn main() {
     derefence_raw_poointer();
+    unsafe_function();
 }
 
 fn derefence_raw_poointer(){
@@ -25,4 +26,15 @@ fn derefence_raw_poointer(){
  
     let address = 0x012345usize;  //point to exact location in memory
     let r = address as *const i32;
+}
+
+fn unsafe_function(){
+    unsafe fn dangerous() {}
+
+    // dangerous(); can't call unsafe function without unsafe block
+    
+    unsafe {
+        dangerous();
+    }
+
 }
