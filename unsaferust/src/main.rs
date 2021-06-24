@@ -7,6 +7,11 @@
 
 use std::slice;
 
+static HELLO_WORLD: &str = "Hello, world!";
+static mut COUNTER: u32 = 0;
+
+
+
 fn main() {
     derefence_raw_poointer();
     unsafe_function();
@@ -16,6 +21,11 @@ fn main() {
     }
 
     call_from_c();
+
+    println!("name is: {}", HELLO_WORLD);
+
+    modify_mutable_static_var();
+
 }
 
 fn derefence_raw_poointer(){
@@ -57,4 +67,18 @@ extern "C" {
 #[no_mangle]
 pub extern "C" fn call_from_c() {
     println!("Just called a Rust function from C!");
+}
+
+fn modify_mutable_static_var(){
+    add_to_count(3);
+
+    unsafe {
+        println!("COUNTER: {}", COUNTER);
+    }
+}
+
+fn add_to_count(inc: u32) {
+    unsafe {
+        COUNTER += inc;
+    }
 }
