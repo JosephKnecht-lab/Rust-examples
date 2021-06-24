@@ -16,6 +16,10 @@ enum Message {
     ChangeColor(i32, i32, i32),
 }
 
+enum HelloMessage {
+    Hello {id: i32},
+}
+
 enum Color {
     Rgb(i32, i32, i32),
     Hsv(i32, i32, i32),
@@ -132,6 +136,7 @@ fn main() {
     unused_variables();
     ignore_with_dots();
     match_guard();
+    bindings();
 
 }
 
@@ -293,5 +298,19 @@ fn match_guard(){
     match x {
         4 | 5 | 6 if y => println!("yes"),  //return no since y is false
         _ => println!("no"),
+    }
+}
+
+fn bindings() {
+    let msg = HelloMessage::Hello { id: 5 };
+
+    match msg {
+        HelloMessage::Hello {
+            id: id_variable @ 3..=7,   //creates id-variable withing the mattern and save it
+        } => println!("Found an id in range: {}", id_variable),
+        HelloMessage::Hello { id: 10..=12 } => {
+            println!("Found an id in another range")
+        }
+        HelloMessage::Hello { id } => println!("Found some other id: {}", id),
     }
 }
