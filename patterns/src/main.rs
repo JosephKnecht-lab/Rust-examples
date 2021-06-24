@@ -122,6 +122,7 @@ fn main() {
     nested_enum_matching();
     complex_tupple();
     foo(2,3);
+    ignore_values();
 
 }
 
@@ -201,4 +202,20 @@ fn complex_tupple(){
 
 fn foo(_: i32, y: i32) {
     println!("This code only uses the y parameter: {}", y,);
+}
+
+fn ignore_values(){
+    let mut setting_value = Some(5);
+    let new_setting_value = Some(10);
+
+    match (setting_value, new_setting_value) {
+        (Some(_), Some(_)) => {   //make sure that the seeting value is of Some(X) type
+            println!("Can't overwrite an existing customized value");
+        }
+        _ => {
+            setting_value = new_setting_value;
+        }
+    }
+
+    println!("setting is {:?}", setting_value);
 }
