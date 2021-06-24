@@ -64,6 +64,24 @@ impl Human {
     }
 }
 
+trait Animal {
+    fn baby_name() -> String;  //associative function, not a method since it doesnt have a self
+}
+
+struct Dog;
+
+impl Dog {
+    fn baby_name() -> String {
+        String::from("Spot")
+    }
+}
+
+impl Animal for Dog {
+    fn baby_name() -> String {
+        String::from("puppy")
+    }
+}
+
 
 fn main() {
     assert_eq!(
@@ -76,4 +94,14 @@ fn main() {
     person.fly();  // prints println!("*waving arms furiously*");
     Pilot::fly(&person);
     Wizard::fly(&person);
+
+    println!("A baby dog is called a {}", Dog::baby_name());
+    // println!("A baby dog is called a {}", Animal::baby_name()); error
+    println!("A baby dog is called a {}", <Dog as Animal>::baby_name()); //return puppy
+
+    // syntax <Type as Trait>::function(receiver_if_method, next_arg, ...);
+
+
+
+
 }
