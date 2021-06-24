@@ -232,4 +232,13 @@ fn ignore_values(){
 fn unused_variables(){
     let _x = 5;
     let y = 10;
+
+
+    let s = Some(String::from("Hello!"));
+
+    if let Some(_) = s {   //using _ doesn't bind to the value of s
+        println!("found a string");
+    }
+
+    println!("{:?}", s);
 }
