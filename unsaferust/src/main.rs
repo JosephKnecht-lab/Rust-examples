@@ -10,6 +10,10 @@ use std::slice;
 fn main() {
     derefence_raw_poointer();
     unsafe_function();
+
+    unsafe {
+        println!("Absolute value of -3 according to C: {}", abs(-3));
+    }
 }
 
 fn derefence_raw_poointer(){
@@ -41,4 +45,9 @@ fn unsafe_function(){
         dangerous();
     }
 
+}
+
+// calling external function in C language
+extern "C" {
+    fn abs(input: i32) -> i32;
 }
