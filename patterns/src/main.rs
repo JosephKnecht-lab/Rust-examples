@@ -74,6 +74,14 @@ fn main() {
         _ => println!("anything"),
     }
 
+    //pattern mathcing range
+    let x = 5;
+
+    match x {
+        1..=5 => println!("one through five"),
+        _ => println!("something else"),
+    }
+
 }
 
 fn print_coordinates(&(x, y): &(i32, i32)) {
