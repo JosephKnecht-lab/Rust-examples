@@ -286,4 +286,12 @@ fn match_guard(){
     }
 
     println!("at the end: x = {:?}, y = {}", x, y);
+
+    let x = 4;
+    let y = false;
+
+    match x {
+        4 | 5 | 6 if y => println!("yes"),  //return no since y is false
+        _ => println!("no"),
+    }
 }
