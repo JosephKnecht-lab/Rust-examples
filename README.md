@@ -28,6 +28,11 @@ cargo run <project name>
 cargo test
 ```
 
++ Format project: 
+```
+cargo fmt
+```
+
 + Create  documentation: 
 ```
 cargo doc
