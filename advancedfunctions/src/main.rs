@@ -24,6 +24,6 @@ fn main() {
 
 }
 
-fn returns_closure() -> dyn Fn(i32) -> i32 {  //cant return a closure directly
-    |x| x + 1
+fn returns_closure() -> Box<dyn Fn(i32) -> i32> {  //cant return a closure directly
+    Box::new(|x| x + 1)  //must be wrapped in a Box
 }
