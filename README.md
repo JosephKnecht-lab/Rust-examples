@@ -33,6 +33,11 @@ cargo test
 cargo fmt
 ```
 
++ Fix warnings: 
+```
+cargo fix
+```
+
 + Create  documentation: 
 ```
 cargo doc
