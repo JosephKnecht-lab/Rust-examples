@@ -21,6 +21,9 @@ macro_rules! vec {    // vec! macro definition
 // pub fn some_name(input: TokenStream) -> TokenStream {
 // }
 
+// #[proc_macro_attribute]  attribute type macros
+// pub fn route(attr: TokenStream, item: TokenStream) -> TokenStream {
+
 
 fn main() {
     let v: Vec<u32> = vec![1, 2, 3];  // simple vec! macro
