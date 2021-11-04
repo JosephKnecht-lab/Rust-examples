@@ -1,3 +1,4 @@
+#[macro_export]
 macro_rules! recurrence {
     ( a[n]: $sty:ty = $($inits:expr),+ , ... , $recur:expr ) => { /* ... */ };
 }
@@ -50,7 +51,7 @@ fn main() {
                     let next_val = {
                         let n = self.pos;
                         let a = IndexOffset { slice: &self.mem, offset: n };
-                        (a[n-1] + a[n-2])
+                        a[n-1] + a[n-2]
                     };
 
                     {
