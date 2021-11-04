@@ -33,6 +33,11 @@ cargo test
 cargo fmt
 ```
 
++ See dependancy tree: 
+```
+cargo tree
+```
+
 + Fix warnings: 
 ```
 cargo fix
